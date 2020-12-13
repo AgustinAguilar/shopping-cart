@@ -1,7 +1,9 @@
+﻿using Supercon.Entities;
+using System;
 using System.Collections.Generic;
-using Supercon.Model;
+using System.Text;
 
-namespace Supercon.Service
+namespace Supercon.Businnes.Services
 {
     public class OrderService
     {

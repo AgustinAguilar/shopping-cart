@@ -2,31 +2,30 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Supercon.Model;
-using Supercon.Service;
+using Supercon.Businnes.Services;
 
 namespace Supercon.Controllers
 {
 
     public class ProductController : Controller
     {
-        private readonly ProductService productService;
+        private readonly ProductService _productService;
 
         public ProductController(ProductService productService)
         {
-            this.productService = productService;
+            this._productService = productService;
         }
 
         [HttpGet("v1/products")]
         public List<string> GetProducts()
         {
-            return productService.GetProductCodes();
+            return _productService.GetProductCodes();
         }
 
         [HttpGet("v1/products/{code}")]
         public IActionResult GetProducts(string code)
         {
-            Product product = productService.GetProduct(code);
+            var product = _productService.GetProduct(code);
             return StatusCode(StatusCodes.Status200OK, product);
         }
     }

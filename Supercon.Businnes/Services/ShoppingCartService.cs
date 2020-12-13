@@ -1,40 +1,33 @@
+﻿using Supercon.DataAccess.Repository;
+using Supercon.Entities;
+using System;
 using System.Collections.Generic;
-using Supercon.Service;
+using System.Text;
 
-namespace Supercon.Model
+namespace Supercon.Businnes.Services
 {
-
-    public class ShoppingCart
+    public class ShoppingCartService
     {
-        //Product and quantity
-        private IList<Product> products;
-        private Customer customer;
-        private string cartState;
+        private readonly ProductRepository _productRepository;
+        private readonly OrderService _orderService;
 
-        public void SetOrderService(OrderService orderService)
+        public ShoppingCartService(ProductRepository productRepository, OrderService orderService)
         {
-            this.orderService = orderService;
-        }
-
-        private OrderService orderService = new OrderService();
-
-        public ShoppingCart(Customer customer, IList<Product> products, string cartState)
-        {
-            this.customer = customer;
-            this.products = products;
-            this.cartState = cartState;
+            this._productRepository = productRepository;
+            this._orderService = orderService;
         }
 
         public void AddProduct(Product product)
         {
+            var products = this._productRepository.GetProducts();
             products.Add(product);
         }
 
         public void RemoveProduct(Product product)
         {
+            var products = this._productRepository.GetProducts();
             products.Remove(product);
         }
-
 
         /*
             Checkout: Calculates total price and total loyalty points earned by the customer.
@@ -46,8 +39,7 @@ namespace Supercon.Model
                 Customer earns 1 point on every $10 spent on a product with 10% discount.
                 Customer earns 1 point on every $15 spent on a product with 15% discount.
         */
-
-        public void Checkout()
+        public void Checkout(IList<Product> products, Customer customer)
         {
             double totalPrice = 0;
 
@@ -73,8 +65,9 @@ namespace Supercon.Model
                 totalPrice += product.Price - discount;
             }
 
-            orderService.ShowConfirmation(customer, products, totalPrice, loyaltyPointsEarned);
+            _orderService.ShowConfirmation(customer, products, totalPrice, loyaltyPointsEarned);
         }
+
 
     }
 }

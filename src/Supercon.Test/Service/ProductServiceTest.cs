@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using Supercon.Service;
 using Xunit;
-using Supercon.Model;
 using System.Linq;
+using Supercon.Businnes.Services;
+using Supercon.Entities;
 
 namespace Supercon.Test.Service
 {
@@ -13,11 +14,11 @@ namespace Supercon.Test.Service
 
         public ProductServiceTest()
         {
-            productService = new ProductService(new List<Product>
-            {
-                new Product(1.50, "PROD_01", "Product 01"),
-                new Product(3.45, "PROD_02", "Product 02")
-            });
+            //productService = new ProductService(new List<Supercon.Entities.Product>
+            //{
+            //    new Supercon.Entities.Product(1.50, "PROD_01", "Product 01"),
+            //    new Supercon.Entities.Product(3.45, "PROD_02", "Product 02")
+            //});
         }
 
         [Fact]

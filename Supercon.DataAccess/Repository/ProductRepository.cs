@@ -1,14 +1,14 @@
-﻿using System;
-using System.Linq;
+﻿using Supercon.Entities;
+using System;
 using System.Collections.Generic;
-using Supercon.Model;
+using System.Text;
 
-namespace Supercon.Service
+namespace Supercon.DataAccess.Repository
 {
-    public class ProductService
+    public class ProductRepository
     {
         // Simple source of products: would come from a database in the real world.
-        private static readonly List<Product> AllProducts = new List<Product>
+        private List<Product> AllProducts = new List<Product>
         {
             new Product(24.99, "CHAIR_RED", "Red plastic chair"),
             new Product(24.99, "DIS_10-CHAIR_BLUE", "Blue plastic chair"),
@@ -21,30 +21,9 @@ namespace Supercon.Service
             new Product(99.99, "BOARD_CHAIR", "Boardroom chair")
         };
 
-        private List<Product> products;
-
-        public ProductService()
+        public List<Product> GetProducts()
         {
-            this.products = AllProducts;
+            return AllProducts;
         }
-
-        public ProductService(List<Product> products)
-        {
-            this.products = products;
-        }
-
-        public List<string> GetProductCodes()
-        {
-            return products
-                       .Select(p => p.ProductCode)
-                       .ToList();
-        }
-
-        public Product GetProduct(string code)
-        {
-            var result = products.Where(x => x.ProductCode == code).SingleOrDefault();
-            return result;
-        }
-
     }
 }

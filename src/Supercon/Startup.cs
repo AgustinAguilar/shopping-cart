@@ -8,7 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Supercon.Service;
+using Supercon.Businnes.Services;
+using Supercon.DataAccess.Repository;
 
 namespace Supercon
 {
@@ -27,6 +28,9 @@ namespace Supercon
             services.AddMvc();
 
             services.AddSingleton<ProductService>();
+            services.AddSingleton<OrderService>();
+            services.AddSingleton<ShoppingCartService>();
+            services.AddSingleton<ProductRepository>();
 
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen();

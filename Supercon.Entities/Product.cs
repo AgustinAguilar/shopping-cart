@@ -1,4 +1,8 @@
-namespace Supercon.Model
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Supercon.Entities
 {
     public class Product
     {
