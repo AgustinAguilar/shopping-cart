@@ -1,10 +1,16 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercon", "src\Supercon\Supercon.csproj", "{4E4F3973-09F0-4449-9677-99920F17A70F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Supercon", "src\Supercon\Supercon.csproj", "{4E4F3973-09F0-4449-9677-99920F17A70F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercon.Test", "src\Supercon.Test\Supercon.Test.csproj", "{D78E5CD8-7ECF-4158-97B9-3B0BD5360914}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Supercon.Test", "src\Supercon.Test\Supercon.Test.csproj", "{D78E5CD8-7ECF-4158-97B9-3B0BD5360914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercon.Businnes", "Supercon.Businnes\Supercon.Businnes.csproj", "{0858A3D2-D238-41E8-A6A8-DD3AAAB04388}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercon.Entities", "Supercon.Entities\Supercon.Entities.csproj", "{E1766AAA-9FD9-4058-AD02-A98B883F67BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Supercon.DataAccess", "Supercon.DataAccess\Supercon.DataAccess.csproj", "{6F022DF3-E75C-4B1B-96CE-193A844F1F9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +26,18 @@ Global
 		{D78E5CD8-7ECF-4158-97B9-3B0BD5360914}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D78E5CD8-7ECF-4158-97B9-3B0BD5360914}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D78E5CD8-7ECF-4158-97B9-3B0BD5360914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0858A3D2-D238-41E8-A6A8-DD3AAAB04388}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0858A3D2-D238-41E8-A6A8-DD3AAAB04388}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0858A3D2-D238-41E8-A6A8-DD3AAAB04388}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0858A3D2-D238-41E8-A6A8-DD3AAAB04388}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1766AAA-9FD9-4058-AD02-A98B883F67BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1766AAA-9FD9-4058-AD02-A98B883F67BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1766AAA-9FD9-4058-AD02-A98B883F67BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1766AAA-9FD9-4058-AD02-A98B883F67BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F022DF3-E75C-4B1B-96CE-193A844F1F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F022DF3-E75C-4B1B-96CE-193A844F1F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F022DF3-E75C-4B1B-96CE-193A844F1F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F022DF3-E75C-4B1B-96CE-193A844F1F9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
