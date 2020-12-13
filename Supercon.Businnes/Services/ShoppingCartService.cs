@@ -2,6 +2,7 @@
 using Supercon.Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Supercon.Businnes.Services
@@ -57,6 +58,11 @@ namespace Supercon.Businnes.Services
                     discount = (product.Price * 0.15);
                     loyaltyPointsEarned += (int)(product.Price / 15);
                 }
+                else if (product.ProductCode.StartsWith("DIS_PKG", System.StringComparison.OrdinalIgnoreCase) 
+                                                && products.Where(x => x.ProductCode.StartsWith("DIS_PKG", System.StringComparison.OrdinalIgnoreCase)).Count() > 2)
+                {
+                    discount = (product.Price * 0.2);
+                }
                 else
                 {
                     loyaltyPointsEarned += (int)(product.Price / 5);
@@ -65,12 +71,13 @@ namespace Supercon.Businnes.Services
                 totalPrice += product.Price - discount;
             }
 
-
             if (totalPrice > 1000)
             {
                 var discount = (totalPrice * 0.1);
                 totalPrice = totalPrice - discount;
             }
+
+
 
             _orderService.ShowConfirmation(customer, products, totalPrice, loyaltyPointsEarned);
         }

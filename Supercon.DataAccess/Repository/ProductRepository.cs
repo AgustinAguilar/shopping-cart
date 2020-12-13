@@ -17,8 +17,8 @@ namespace Supercon.DataAccess.Repository
             new Product(14.99, "DIS_15-STOOL_GREEN", "Green plastic footstool"),
             new Product(74.99, "COMP_DESK", "Wooden computer desk"),
             new Product(129.99, "COMP_CHAIR", "Computer swivel chair"),
-            new Product(249.99, "BOARD_TABLE", "12-person boardroom table"),
-            new Product(99.99, "BOARD_CHAIR", "Boardroom chair")
+            new Product(249.99, "DIS_PKG-BOARD_TABLE", "12-person boardroom table"),
+            new Product(99.99, "DIS_PKG-BOARD_CHAIR", "Boardroom chair")
         };
 
         public List<Product> GetProducts()
