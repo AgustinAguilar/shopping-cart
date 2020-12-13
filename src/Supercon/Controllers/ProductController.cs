@@ -6,7 +6,8 @@ using Supercon.Businnes.Services;
 
 namespace Supercon.Controllers
 {
-
+    [Route("api/[controller]")]
+    [ApiController]
     public class ProductController : Controller
     {
         private readonly ProductService _productService;
