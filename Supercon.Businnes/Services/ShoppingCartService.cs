@@ -65,6 +65,13 @@ namespace Supercon.Businnes.Services
                 totalPrice += product.Price - discount;
             }
 
+
+            if (totalPrice > 1000)
+            {
+                var discount = (totalPrice * 0.1);
+                totalPrice = totalPrice - discount;
+            }
+
             _orderService.ShowConfirmation(customer, products, totalPrice, loyaltyPointsEarned);
         }
 
