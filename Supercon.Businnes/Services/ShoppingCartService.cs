@@ -47,10 +47,10 @@ namespace Supercon.Businnes.Services
             foreach (Product product in products)
             {
                 double discount = 0;
-                if (product.ProductCode.StartsWith("DIS_10", System.StringComparison.OrdinalIgnoreCase))
+                if (product.ProductCode.StartsWith("DIS_20", System.StringComparison.OrdinalIgnoreCase))
                 {
-                    discount = (product.Price * 0.1);
-                    loyaltyPointsEarned += (int)(product.Price / 10);
+                    discount = (product.Price * 0.2);
+                    loyaltyPointsEarned += (int)(product.Price / 20);
                 }
                 else if (product.ProductCode.StartsWith("DIS_15", System.StringComparison.OrdinalIgnoreCase))
                 {

@@ -10,9 +10,9 @@ namespace Supercon.DataAccess.Repository
         // Simple source of products: would come from a database in the real world.
         private List<Product> AllProducts = new List<Product>
         {
-            new Product(24.99, "CHAIR_RED", "Red plastic chair"),
-            new Product(24.99, "DIS_10-CHAIR_BLUE", "Blue plastic chair"),
-            new Product(24.99, "CHAIR_WHITE", "White plastic chair"),
+            new Product(24.99, "DIS_20-CHAIR_RED", "Red plastic chair"),
+            new Product(24.99, "DIS_20-CHAIR_BLUE", "Blue plastic chair"),
+            new Product(24.99, "DIS_20-CHAIR_WHITE", "White plastic chair"),
             new Product(14.99, "STOOL_WHITE", "White plastic footstool"),
             new Product(14.99, "DIS_15-STOOL_GREEN", "Green plastic footstool"),
             new Product(74.99, "COMP_DESK", "Wooden computer desk"),
