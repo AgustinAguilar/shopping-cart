@@ -42,14 +42,8 @@ namespace Supercon.Service
 
         public Product GetProduct(string code)
         {
-            foreach (var product in products)
-            {
-                if (product.ProductCode == code)
-                {
-                    return product;
-                }
-            }
-            return null;
+            var result = products.Where(x => x.ProductCode == code).SingleOrDefault();
+            return result;
         }
 
     }
